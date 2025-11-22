@@ -111,7 +111,7 @@ async def calculate_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # Команда /now
 async def now_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    current_time = datetime.now()
+    current_time = datetime.now() + timedelta(hours=3)  # UTC+3 для Москвы
     
     # Сохраняем время сна в контексте пользователя
     context.user_data['sleep_time'] = current_time
